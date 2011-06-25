@@ -30,7 +30,7 @@ io.of("/manage").on("connection", function(manageSocket) {
 
 
 slides.on("connection", function() {
-  slides.emit("changeto", lastSlideId);
+  slides.emit("startfrom", lastSlideId);
 });
 
 

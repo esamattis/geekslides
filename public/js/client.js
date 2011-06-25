@@ -66,13 +66,23 @@ $(document).ready(function(){
 
   Spine.Route.setup();
 
-  var socket = io.connect();
-  var slides = socket.socket.of("/slides");
+  var connection = io.connect();
+  var slides = connection.socket.of("/slides");
 
   slides.on('changeto', function (slideId) {
     console.log("socket asks to change to", slideId);
     app.navigateToSlide(slideId);
   });
+
+
+  // Handle initial slide separately. Jump to current slide only if 
+  // user did not request slide by url.
+  slides.on('startfrom', function (slideId) {
+    if (!window.location.hash) {
+      app.navigateToSlide(slideId);
+    }
+  });
+
 
 
 });
