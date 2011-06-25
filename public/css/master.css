@@ -9,3 +9,18 @@
     display: block;
 }
 
+
+
+#manage {
+    text-align: center;
+}
+
+#manage h1 {
+    font-size: 3em;
+}
+
+#manage button {
+    width: 45%;
+    height: 100px;
+}
+

@@ -5,7 +5,6 @@ var App = Spine.Controller.create({
   init: function(){
     this.routes({
       "/slide/:id": function(id){
-        console.log("got slide route event", id);
         this._activateSlide(parseInt(id, 10));
       }
     });
@@ -14,12 +13,10 @@ var App = Spine.Controller.create({
     this.keys = {
       // Back arrow
       "37": function() {
-        console.log("Navigating to previous");
         this.navigateToSlide(this.slideId - 1);
       },
       // Forward arrow
       "39": function() {
-        console.log("Navigating to next");
         this.navigateToSlide(this.slideId + 1);
       }
     };
@@ -68,6 +65,15 @@ $(document).ready(function(){
   });
 
   Spine.Route.setup();
+
+  var socket = io.connect();
+  var slides = socket.socket.of("/slides");
+
+  slides.on('changeto', function (slideId) {
+    console.log("socket asks to change to", slideId);
+    app.navigateToSlide(slideId);
+  });
+
 
 });
 
