@@ -1,32 +1,154 @@
 script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
-.slide
-  h1 Node.js talk @ Geek Collision v0.4.1
-  ul
-    li
-      b Who:
-      a(href="http://esa-matti.suuronen.org") Esa-Matti Suuronen
-    li 
-      b Email: 
-      span esa-matti ät suuronen.org
-    li
-      b Twitter: 
-      a(href="http://twitter.com/EsaMatti") EsaMatti
-    li
-      b IRC: 
-      span Epeli @ IRCnet/Freenode
+#slides
 
-  .speaker Speaker notes
+  .slide
+    h1 Node.js talk @ Geek Collision v0.4.1
+    ul
+      li
+        b Who:
+        a(href="http://esa-matti.suuronen.org") Esa-Matti Suuronen
+      li 
+        b Email: 
+        span esa-matti ät suuronen.org
+      li
+        b Twitter: 
+        a(href="http://twitter.com/EsaMatti") EsaMatti
+      li
+        b IRC: 
+        span Epeli @ IRCnet/Freenode
 
-.slide
-  h1 hello 2
+    .speaker Yep, that's me
 
-  .speaker Speaker nnotes e2
 
-.slide 
-  h1 hello 3
 
-.slide
-  h1 hello 4
 
+
+
+
+  .slide
+    h1 Overview
+    ul
+      li Event-driven I/O framework for 
+        a(href="http://code.google.com/p/v8/") V8
+      li Javascript
+      li Includes performant, fairly low level, web server
+      li Otherwise pretty much just a way to run Javascript outside of browsers
+
+    .speaker Speaker nnotes e2
+
+
+
+
+
+
+
+
+
+
+  .slide
+    h1 Server-side Javascript
+    ul
+      li Not first
+      li Netscape 
+        a(href="http://www.datacraft.com/livewire.html") LiveWire
+        span  ...  1996!
+      li 
+        a(href="http://jaxer.org/") Aptana Jaxer
+      li 
+        a(href="http://www.ringojs.org/") RingoJS
+      li etc.
+
+    .speaker RingoJS is based on Mozilla's Rhino (Java)
+
+
+
+
+
+
+
+  .slide 
+    h1 Hype?
+    ul
+      li Fast
+        ul
+          li V8
+      li JavaScript
+      li Asynchronous
+      li Scalable
+
+    .speaker
+      ul
+        li Fast because asynchronous
+        li Based on select system call
+        li Most web apps are I/O bound
+        li Apache does forks :(
+
+
+
+
+
+
+  .slide 
+    h1 Asynchronous!
+    ul
+      li Single event loop
+      li Code!
+    .speaker 
+      ul 
+        li setTimeout Hello World
+        li Telnet webchat
+
+
+
+
+
+
+  .slide 
+    h1 Scaling?
+    ul
+      li No threads
+      li Use processes!
+        ul
+          li Easy to scale out of one box
+      li
+        a(href="http://learnboost.github.com/cluster/") Cluster for simple apps
+
+
+
+
+
+
+  .slide
+    h1 Fun with Javascript?
+    ul
+      li
+        a(href="http://blog.learnboost.com/blog/introducing-node-canvas-server-side-html5-canvas-api/") HTML5 Canvas
+      li
+        a(href="https://github.com/pgriess/node-webworker") HTML5 Web Workers
+
+      li Multiplayer game server
+
+    .speaker On games you have to often run the game logic also on server to prevent cheating
+
+
+
+
+
+
+  .slide
+    h1 Real-time web!
+    ul
+      li
+        a(href="http://socket.io/") Socket.io
+      li These slides!
+      li
+        a(href="http://nowjs.com/") Nowjs
+
+
+
+
+div#footer
+  b Slides: 
+  a(href="http://esa-matti.suuronen.org/nodejs") http://esa-matti.suuronen.org/nodejs/
