@@ -9,9 +9,8 @@
         }
     , "bin": { "geekslides": "./bin/geekslides" }
     , "dependencies": {
-        "coffee-script": ""
+        "jade": ""
         , "express": ""
-        , "ejs": ""
         , "socket.io": ""
     }
 }

@@ -10,6 +10,9 @@
 }
 
 
+.slide .speaker {
+    display: none;
+}
 
 #manage {
     text-align: center;

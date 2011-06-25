@@ -7,30 +7,33 @@ var io = require('socket.io').listen(app);
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
-  res.render('slides.ejs');
+  res.render('slides.jade');
 });
 
 app.get('/manage', function(req, res){
-  res.render('manage.ejs');
+  res.render('manage.jade');
 });
 
 
 
 var lastSlideId = 1;
 
-var slides = io.of("/slides");
+var slidesSockets = io.of("/slides");
+var manageSockets = io.of("/manage");
 
-io.of("/manage").on("connection", function(manageSocket) {
-  manageSocket.on("changeto", function(slideId) {
+manageSockets.on("connection", function(socket) {
+
+  socket.on("changeto", function(slideId) {
     lastSlideId = slideId;
-    slides.emit("changeto", slideId);
+    slidesSockets.emit("changeto", slideId);
   });
+
 });
 
 
 
-slides.on("connection", function() {
-  slides.emit("startfrom", lastSlideId);
+slidesSockets.on("connection", function(socket) {
+  socket.emit("startfrom", lastSlideId);
 });
 
 

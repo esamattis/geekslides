@@ -1,33 +1,74 @@
 
+var NAV_EVENT;
+
+if ('ontouchstart' in document.documentElement) {
+  NAV_EVENT = 'touchstart';
+}
+else {
+  NAV_EVENT = 'click';
+}
+
+var ManageApp = Spine.Controller.create({
+
+  elements: {
+    "#current": "title",
+    "#slide-title": "slideTitle",
+    "#max": "max",
+    "#speaker-note": "speakerNote"
+  },
+
+  init: function() {
+    this.current = 1;
+    this.max.text(this.slides.size());
+    this.$("#next").bind(NAV_EVENT, this.proxy(this.next));
+    this.$("#previous").bind(NAV_EVENT, this.proxy(this.previous));
+    this.update();
+  },
+
+  next: function() {
+      if (this.current < this.slides.size()){
+        this.current++;
+        this.update();
+      }
+      return false;
+  },
+
+  previous: function() {
+      if (this.current > 1) {
+        this.current--;
+        this.update();
+      }
+      return false;
+  },
+
+  update: function() {
+      this.title.text(this.current);
+
+      var current = $(this.slides.get(this.current-1));
+      this.slideTitle.text(current.find("h1").text());
+      this.speakerNote.html(current.find(".speaker").html());
+
+      this.socket.emit("changeto", this.current);
+
+  }
+
+
+});
+
+
+
 
 $(document).ready(function(){
 
-  var current = 1;
-  var event;
-  var title = $("#current");
+  var connection = io.connect();
 
-  if ('ontouchstart' in document.documentElement) {
-    event = 'touchstart';
-  }
-  else {
-    event = 'click';
-  }
-
-  var socket = io.connect();
-  var manage = socket.socket.of("/manage");
-
-  $("#next").bind(event, function () {
-    current++;
-    title.text(current);
-    manage.emit("changeto", current);
-    return false;
-  });
-
-  $("#previous").bind(event, function () {
-    current--;
-    title.text(current);
-    manage.emit("changeto", current);
-    return false;
+  $.get("/", function(data) {
+    var slides = $(".slide", data);
+    window.manageapp = ManageApp.init({
+      el: $("#manage"),
+      socket: connection.socket.of("/manage"),
+      slides: slides
+    });
   });
 
 
