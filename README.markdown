@@ -1,13 +1,13 @@
 
 # Geek Slides
 
-These slides was made for my introductory Node.js talk. They also served as a
+These slides were made for my introductory Node.js talk. They also served as a
 code example within the talk.
 
 This is like any another HTML based slide system, but there is also clever web
 server written with Node.js that allows presenter to remote control the slides
 from a mobile web app. So anyone in the audience can view the slides and the
-slides are immediately switched on their screen as the presenter goes on with
+slides are immediately switched on their screens as the presenter goes on with
 the slides.
 
 
@@ -19,20 +19,19 @@ http://melmacian.net:1337/
 And the controller interface can be found from here:
 http://melmacian.net:1337/manage
 
-But beware! There might be several people controlling the slides so they might
-bit funky to control them :)
+But beware! There might be several people controlling the slides! :) :)
 
 
-# Installing and hacking
+## Installing and hacking
 
-If the demo is already down (or too funky!) you can install the slides locally.
+If the demo is already down you can install the slides locally.
 
 Install [Node.js][] and [NPM][] and run
 
-  git clone https://github.com/epeli/geekslides.git
-  cd geekslides
-  npm install
-  node app.js
+    git clone https://github.com/epeli/geekslides.git
+    cd geekslides
+    npm install
+    node app.js
 
 
 You can modify the slides from views/slides.jade
