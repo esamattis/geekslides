@@ -1,5 +1,5 @@
 $(function(){
 
-  $(".here").text(window.location.origin).attr("href",window.location.origin);
+  $(".here").text(window.location.href).attr("href",window.location.href);
 
 });
