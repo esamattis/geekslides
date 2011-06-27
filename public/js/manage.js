@@ -18,7 +18,7 @@ var ManageApp = Spine.Controller.create({
   },
 
   init: function() {
-    this.current = 1;
+    this.current = parseInt(window.location.hash.substring(1), 10) || 1;
     this.max.text(this.slides.size());
     this.$("#next").bind(NAV_EVENT, this.proxy(this.next));
     this.$("#previous").bind(NAV_EVENT, this.proxy(this.previous));
@@ -43,6 +43,7 @@ var ManageApp = Spine.Controller.create({
 
   update: function() {
       this.title.text(this.current);
+      window.location.hash = this.current;
 
       var current = $(this.slides.get(this.current-1));
       this.slideTitle.text(current.find("h1").text());
