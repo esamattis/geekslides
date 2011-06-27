@@ -6,7 +6,6 @@ if (!window.console || !window.console.log) {
 }
 
 $(function(){
-
-  $(".here").text(window.location.href).attr("href",window.location.href);
-
+  var url = window.location.href.replace(/#.*$/, "");
+  $(".here").text(url).attr("href",url);
 });
