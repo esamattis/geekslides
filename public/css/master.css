@@ -60,8 +60,11 @@ li {
 }
 
 #footer-right {
-    font-size: 2em;
+    font-size: 1em;
     position: absolute;
     bottom: 0px;
     right: 0px;
+}
+#footer-right * {
+    color: red;
 }

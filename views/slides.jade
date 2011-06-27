@@ -8,6 +8,7 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
   .slide
     h1 Node.js talk @ Geek Collision v0.4.1
     ul
+      li 28.06.2011
       li
         b Who:
         a(href="http://esa-matti.suuronen.org") Esa-Matti Suuronen
@@ -24,7 +25,11 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
     .speaker Yep, that's me
 
 
-
+  .slide
+    h1 Early demo
+    p View there slides here:
+      h1
+        a.here loading
 
 
 
@@ -39,9 +44,9 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
       li by 
         a(href="https://twitter.com/#!/ryah") Ryan 
         a(href="https://github.com/ry") Dahl
-      li Javascript
+      li JavaScript
       li Includes performant, fairly low level, web server
-      li Otherwise pretty much just a way to run Javascript outside of browsers
+      li Otherwise pretty much just a way to run JavaScript outside of browsers
       li Bit like 
         a(href="http://twistedmatrix.com/trac/") Twisted 
         span  or 
@@ -59,7 +64,7 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
   .slide
-    h1 Server-side Javascript
+    h1 Server-side JavaScript
     ul
       li Not first
       li Netscape 
@@ -162,7 +167,7 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
     h1 Why JavaScript?
     ul
       li Already asynchronous mentality
-      li No burden from legacy synchronous libs
+      li No burden from synchronous legacy libs
         ul
           li Everything just works
           li Twisted :(
@@ -192,7 +197,7 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
   .slide
-    h1 Fun with Javascript?
+    h1 Fun with JavaScript?
     ul
       li Multiplayer game server for HTML5 games
 
@@ -200,21 +205,21 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
   .slide
-    h1 Fun with Javascript?
+    h1 Fun with JavaScript?
     ul
       li
         a(href="http://blog.learnboost.com/blog/introducing-node-canvas-server-side-html5-canvas-api/") HTML5 Canvas
 
 
   .slide
-    h1 Fun with Javascript?
+    h1 Fun with JavaScript?
     ul
       li
         a(href="https://github.com/pgriess/node-webworker") HTML5 Web Workers
 
 
   .slide
-    h1 Fun with Javascript?
+    h1 Fun with JavaScript?
     ul
       li Server-side DOM too!
       li
@@ -222,7 +227,7 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
   .slide
-    h1 Fun with Javascript?
+    h1 Fun with JavaScript?
     ul
       li Server-side DOM means Server-side jQuery!
       li 
@@ -308,11 +313,6 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
 
-  .slide
-    h1 Even easier real-time
-    ul
-      li
-        a(href="http://nowjs.com/") Nowjs
 
 
   .slide
@@ -324,6 +324,12 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
         a(href="http://pypi.python.org/pypi/SocketTornad.IO/") Python port (Tornado)
       li
         a(href="https://github.com/tadglines/Socket.IO-Java") Java port
+
+  .slide
+    h1 Even easier real-time
+    ul
+      li
+        a(href="http://nowjs.com/") Nowjs
 
 
   .slide
@@ -338,7 +344,7 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
   .slide
-    h1 Weak Points
+    h1 Weak points of Node.js
     ul
       li 
         a(href="http://nodejs.org/docs/v0.4.8/api/buffers.html") Binary
@@ -382,7 +388,9 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 div#footer
   b Slides: 
-  a#here(href="http://esa-matti.suuronen.org/nodejs") http://esa-matti.suuronen.org/nodejs/
+  a.here(href="http://esa-matti.suuronen.org/nodejs") http://esa-matti.suuronen.org/nodejs/
 div#footer-right
-  a(href="https://github.com/epeli/geekslides") (src)
+  a(href="https://github.com/epeli/geekslides", title="Protip: Fight back with your arrow keys!") 
+    b Warning: 
+    span Someone might be remote controlling these!
 
