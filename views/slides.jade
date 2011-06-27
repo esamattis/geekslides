@@ -29,14 +29,23 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
   .slide
     h1 Overview
+    p
+      img(src="/img/logo.png", alt="node")
     ul
-      li Event-driven I/O framework for 
-        a(href="http://code.google.com/p/v8/") V8
+      li Event-driven I/O framework on top of 
+        a(href="http://code.google.com/p/v8/") V8 C++ lib
+      li by 
+        a(href="https://twitter.com/#!/ryah") Ryan 
+        a(href="https://github.com/ry") Dahl
       li Javascript
       li Includes performant, fairly low level, web server
       li Otherwise pretty much just a way to run Javascript outside of browsers
+      li Bit like 
+        a(href="http://twistedmatrix.com/trac/") Twisted 
+        span  or 
+        a(href="http://rubyeventmachine.com/") EventMachine
 
-    .speaker Speaker nnotes e2
+
 
 
 
@@ -58,9 +67,14 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
         a(href="http://jaxer.org/") Aptana Jaxer
       li 
         a(href="http://www.ringojs.org/") RingoJS
-      li etc.
+      li 
+        a(href="http://en.wikipedia.org/wiki/Comparison_of_server-side_JavaScript_solutions") etc.
 
     .speaker RingoJS is based on Mozilla's Rhino (Java)
+
+
+
+
 
 
 
@@ -74,9 +88,12 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
       li Fast
         ul
           li V8
+          li Asynchronous
       li JavaScript
-      li Asynchronous
       li Scalable
+        ul
+          li "node in the cloud"
+      img(src="/img/logo.png", alt="node")
 
     .speaker
       ul
@@ -87,22 +104,46 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
 
-
-
-
   .slide 
-    h1 Asynchronous!
+    h1 Everything* is asynchronous!
     ul
+      li I/O! 
+      li Web apps are mostly waiting for I/O
       li Single event loop
-      li Code!
+    .speaker 
+      ul
+        li FS and NET IO
+        li require, funcSync-funcs
+        li Rails does nothing but waits for I/O, ry
+
+
+
+
+  .slide
+    h1 Comparison with grain of salt
+    img(src="/img/perf.png", alt="")
+    p by Ryan Dahl
     .speaker 
       ul 
-        li setTimeout Hello World
-        li Telnet webchat
+        li nginx is serving from fs. 4MB vs. 60MB
+        li Mongrel is interesting 
 
 
 
+  .slide
+    h1 Threads vs. evented
+    img(src="/img/reqs.png", alt="")
+    p
+      a(href="http://blog.webfaction.com/a-little-holiday-present") http://blog.webfaction.com/a-little-holiday-present
+    .speaker Little overhead from threads
 
+
+  .slide
+    h1 Threads vs. evented
+    img(src="/img/memory.png", alt="")
+    p
+      a(href="http://blog.webfaction.com/a-little-holiday-present") http://blog.webfaction.com/a-little-holiday-present
+    .speaker Memory matters more
 
 
   .slide 
@@ -112,8 +153,36 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
       li Use processes!
         ul
           li Easy to scale out of one box
-      li
-        a(href="http://learnboost.github.com/cluster/") Cluster for simple apps
+
+
+
+  .slide
+    h1 Why JavaScript?
+    ul
+      li Already asynchronous mentality
+      li No burden from legacy synchronous libs
+        ul
+          li Everything just works
+          li Twisted :(
+
+    .speaker Python core does not work in Twisted
+
+
+
+
+
+  .slide
+    h1 Code!
+    pre(class="brush: js").
+      console.log("Hello, World!");
+
+
+
+    .speaker
+      ul
+        li setTimeout Hello World
+        li Telnet webchat
+
 
 
 
@@ -123,16 +192,99 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
   .slide
     h1 Fun with Javascript?
     ul
-      li
-        a(href="http://blog.learnboost.com/blog/introducing-node-canvas-server-side-html5-canvas-api/") HTML5 Canvas
-      li
-        a(href="https://github.com/pgriess/node-webworker") HTML5 Web Workers
-
-      li Multiplayer game server
+      li Multiplayer game server for HTML5 games
 
     .speaker On games you have to often run the game logic also on server to prevent cheating
 
 
+  .slide
+    h1 Fun with Javascript?
+    ul
+      li
+        a(href="http://blog.learnboost.com/blog/introducing-node-canvas-server-side-html5-canvas-api/") HTML5 Canvas
+
+
+  .slide
+    h1 Fun with Javascript?
+    ul
+      li
+        a(href="https://github.com/pgriess/node-webworker") HTML5 Web Workers
+
+
+  .slide
+    h1 Fun with Javascript?
+    ul
+      li Server-side DOM too!
+      li
+        a(href="https://github.com/tmpvar/jsdom") jsdom
+
+
+  .slide
+    h1 Fun with Javascript?
+    ul
+      li Server-side DOM means Server-side jQuery!
+      li 
+        a(href="https://github.com/mape/node-scraper") node-scraper
+
+
+  .slide
+    h1 Fun with JavaScript?
+    ul
+      li Server-side DOM + server-side JavaScript?
+
+  .slide
+    h1 Fun with JavaScript?
+    ul
+      li Server-side DOM + server-side JavaScript?
+      li 
+        strong Epic server-side browser!
+      li 
+        a(href="http://zombie.labnotes.org/") Zombie.js
+      li Fast headless JavaScript aware acceptance-testing
+        ul
+          li Combine Zombie.js with:
+          li
+            a(href="http://vowsjs.org/") Vows
+          li
+            a(href="http://pivotal.github.com/jasmine/") Jasmine
+
+
+
+
+  .slide
+    h1 Web frameworks
+    ul 
+      li 
+        a(href="http://expressjs.com/") Express
+      li
+        a(href="https://github.com/joyent/node/wiki/modules#web-frameworks") Many others
+
+    .speaker Express is Sinatra like
+
+
+  .slide
+    h1 Persistence
+    ul
+      li Good old stuff
+      ul
+        li
+          a(href="https://github.com/felixge/node-mysql") MySQL
+        li
+          a(href="https://github.com/brianc/node-postgres") PostgreSQL
+        li
+          a(href="https://github.com/orlandov/node-sqlite") SQLite
+        li
+          a(href="https://github.com/mariano/node-db-oracle") Oracle :P
+      li JSON stores &lt;3 JavaSript
+        ul
+          li
+            a(href="https://github.com/cloudhead/cradle") CouchDB
+          li
+            a(href="http://mongoosejs.com/") MongoDB
+          li 
+            a(href="https://github.com/mranney/node_redis/") Redis (JSONish)
+
+    .speaker Node.js users are often adventureus, so NoSQL is used a lot
 
 
 
@@ -142,9 +294,59 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
     ul
       li
         a(href="http://socket.io/") Socket.io
-      li These slides!
+
+
+
+  .slide
+    h1 Code!
+    ul
+      li
+        a(href="https://github.com/epeli/geekslides") These slides!
+      li Server loc &lt; 50!
+
+
+
+  .slide
+    h1 Even easier real-time
+    ul
       li
         a(href="http://nowjs.com/") Nowjs
+
+
+  .slide
+    h1 or bigger
+    ul
+      li
+        a(href="https://github.com/socketstream/socketstream") SocketStream
+      li
+        a(href="http://addyosmani.com/blog/building-real-time-coffeescript-web-applications-with-socketstream/") Tutorial
+
+
+
+
+  .slide
+    h1 Weak Points
+    ul
+      li 
+        a(href="http://nodejs.org/docs/v0.4.8/api/buffers.html") Binary
+      li Raw computation
+
+
+
+  .slide 
+    h1 Tools
+    ul
+      li 
+        a(href="http://npmjs.org") NPM - Node Package Manager
+      li 
+        a(href="") Supervisor - Code reloading
+      li 
+        a(href="https://github.com/dannycoates/node-inspector") node-inspector (webkit debugger)
+      li
+        a(href="https://github.com/indexzero/forever") Forever - Daemonizing
+      li
+        a(href="http://learnboost.github.com/cluster/") Cluster
+
 
 
 

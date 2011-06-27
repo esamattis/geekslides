@@ -7,10 +7,25 @@ html
     meta(name="viewport", content="width=device-width")
 
     link(rel="stylesheet", href="/css/master.css", type="text/css", media="screen", charset="utf-8")
-    script(src="/js/jquery.js", type="text/javascript", charset="utf-8")
+
+
+    link(rel="stylesheet", href="/css/vendor/shCore.css", type="text/css", media="screen", charset="utf-8")
+    link(rel="stylesheet", href="/css/vendor/shCoreDefault.css", type="text/css", media="screen", charset="utf-8")
+
+
     script(src="/socket.io/socket.io.js", type="text/javascript", charset="utf-8")
-    script(src="/js/spine.js", type="text/javascript", charset="utf-8")
-    script(src="/js/spine.route.js", type="text/javascript", charset="utf-8")
+
+
+    script(src="/js/vendor/shCore.js", type="text/javascript", charset="utf-8")
+    script(src="/js/vendor/shBrushJScript.js", type="text/javascript", charset="utf-8")
+
+    script(src="/js/vendor/jquery.js", type="text/javascript", charset="utf-8")
+    script(src="/js/vendor/spine.js", type="text/javascript", charset="utf-8")
+    script(src="/js/vendor/spine.route.js", type="text/javascript", charset="utf-8")
+    script(type="text/javascript", charset="utf-8")
+      jQuery(function(){
+        SyntaxHighlighter.all();
+      });
 
   body
     div#main!= body
