@@ -54,6 +54,14 @@ li {
 
 
 #footer {
+    font-size: 2em;
     position: absolute;
     bottom: 0px;
+}
+
+#footer-right {
+    font-size: 2em;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }

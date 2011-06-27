@@ -1,3 +1,5 @@
+// http://jade-lang.com/
+script(src="/js/helpers.js", type="text/javascript", charset="utf-8")
 script(src="/js/client.js", type="text/javascript", charset="utf-8")
 
 
@@ -332,6 +334,20 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
       li Raw computation
 
 
+  .slide
+    h1 Debugging
+    p
+      a(href="http://nodejs.org/docs/v0.4.8/api/debugger.html") Build-in GDB-like
+    pre
+      $ node debug app.js
+
+    p 
+      a(href="https://github.com/dannycoates/node-inspector") node-inspector (webkit debugger)
+    p
+      img(src="/img/inspector.png")
+    p
+      a(href="http://www.youtube.com/watch?v=AOnK3NVnxL8") http://www.youtube.com/watch?v=AOnK3NVnxL8
+
 
   .slide 
     h1 Tools
@@ -340,17 +356,22 @@ script(src="/js/client.js", type="text/javascript", charset="utf-8")
         a(href="http://npmjs.org") NPM - Node Package Manager
       li 
         a(href="") Supervisor - Code reloading
-      li 
-        a(href="https://github.com/dannycoates/node-inspector") node-inspector (webkit debugger)
       li
         a(href="https://github.com/indexzero/forever") Forever - Daemonizing
       li
         a(href="http://learnboost.github.com/cluster/") Cluster
 
 
-
+  .slide
+    h1 Thanks!
+    ul
+      li Slide sources: 
+        a(href="https://github.com/epeli/geekslides") https://github.com/epeli/geekslides
 
 
 div#footer
   b Slides: 
-  a(href="http://esa-matti.suuronen.org/nodejs") http://esa-matti.suuronen.org/nodejs/
+  a#here(href="http://esa-matti.suuronen.org/nodejs") http://esa-matti.suuronen.org/nodejs/
+div#footer-right
+  a(href="https://github.com/epeli/geekslides") (src)
+
