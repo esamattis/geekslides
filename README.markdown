@@ -14,7 +14,8 @@ the slides.
 ## Demo
 
 The original slides are hosted here for now:
-http://melmacian.net:1337/
+http://melmacian.net:1337/#/slide/1
+
 navigate with arrow keys
 
 
