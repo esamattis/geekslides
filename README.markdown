@@ -1,8 +1,8 @@
 
 # Geek Slides
 
-These slides were made for my introductory Node.js talk. They also served as a
-code example within the talk.
+These slides were made for my introductory Node.js talk at [Geek Collision][geek]
+Jyväskylä. They also served as a code example within the talk.
 
 This is like any another HTML based slide system, but there is also clever web
 server written with Node.js that allows presenter to remote control the slides
@@ -15,11 +15,13 @@ the slides.
 
 The original slides are hosted here for now:
 http://melmacian.net:1337/
+navigate with arrow keys
 
-And the controller interface can be found from here:
+
+The remote controller interface can be found from here:
 http://melmacian.net:1337/manage
 
-But beware! There might be several people controlling the slides! :) :)
+But beware! There might be several people controlling the slides! :)
 
 
 ## Installing and hacking
@@ -43,4 +45,5 @@ can track its usage, thanks :)
 
 [Node.js]: http://nodejs.org/
 [NPM]: http://npmjs.org/j
+[geek]: http://www.geekcollision.org/2011/06/v041-nodejs-change-of-location.html
 
