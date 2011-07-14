@@ -45,6 +45,6 @@ can track its usage, thanks :)
 
 
 [Node.js]: http://nodejs.org/
-[NPM]: http://npmjs.org/j
+[NPM]: http://npmjs.org/
 [geek]: http://www.geekcollision.org/2011/06/v041-nodejs-change-of-location.html
 
