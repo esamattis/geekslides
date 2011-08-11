@@ -1,4 +1,3 @@
-
 # Geek Slides
 
 These slides were made for my introductory Node.js talk at [Geek Collision][geek]
@@ -33,7 +32,7 @@ Install [Node.js][] and [NPM][] and run
 
     git clone https://github.com/epeli/geekslides.git
     cd geekslides
-    npm install
+    npm install socket.io express
     node app.js
 
 
