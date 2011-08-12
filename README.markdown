@@ -32,7 +32,7 @@ Install [Node.js][] and [NPM][] and run
 
     git clone https://github.com/epeli/geekslides.git
     cd geekslides
-    npm install socket.io express
+    npm install
     node app.js
 
 
