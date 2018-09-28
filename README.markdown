@@ -1,6 +1,8 @@
 
 # Geek Slides
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/epeli/geekslides.svg)](https://greenkeeper.io/)
+
 These slides were made for my introductory Node.js talk at [Geek Collision][geek]
 Jyväskylä. They also served as a code example within the talk.
 
